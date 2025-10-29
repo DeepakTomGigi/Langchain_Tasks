@@ -85,7 +85,7 @@ def get_notes() -> str:
     return f"You have {len(notes)} note(s): " + "; ".join(f'"{n}"' for n in notes)
 
 def improve(text: str) -> str:
-    prompt = f"Rewrite this to be clearer and more professional. Explain the change:\n{text}"
+    prompt = f"Rewrite this to be clearer and more professional.\n{text}"
     return llm.invoke(prompt).content.strip()
 
 def classify_priority(task: str) -> str:
